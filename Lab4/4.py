@@ -1,0 +1,35 @@
+class Integer(object):
+	def __init__(self,number,IsPositive):
+		self.number = number
+		self.IsPositive= IsPositive
+	def display(self):
+		if self.IsPositive:
+			print self.number
+		else:
+			print self.number*(-1)
+class NegativeInteger(Integer):
+	def __init__(self, number):
+		Integer.__init__(self, number, False)
+	def display(self):
+		Integer.display(self)
+		print "This Is an object of the NegativeInteger class"
+
+if __name__=="__main__":
+  	test = 	Integer(4,True)
+	test.display()
+	test2=NegativeInteger(5)
+	test2.display()
+	TheList = [test,test2]
+	for i in TheList:
+		i.display()
+	one=raw_input("How many numbers do u want to create?")
+	for j in one:
+		User1=Integer(raw_input("a number:"),raw_input("positive=>True/Negative=>False"))
+		User1.display()
+	
+	
+
+
+
+
+
